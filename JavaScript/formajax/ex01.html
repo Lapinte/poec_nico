@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Exercice 1</title>
+</head>
+<body>
+
+    <form>
+        <input type="text" name="name">
+        <button type="submit">Valider</button>
+    </form>
+
+    <script>
+        const input = document.querySelector('input');
+        input.addEventListener('keyup', (ev) => {
+            console.log(input.value);
+            console.log(ev.key);
+        });
+    </script>
+</body>
+</html>
