@@ -2,6 +2,12 @@
 var uno = "01";
 var dos = "02"; 
 
-var tres = Number(uno) + Number(dos);
+uno = Number(uno);
+dos = Number(dos);
 
-console.log(tres);
+if (!Number.isNaN(uno) && !Number.isNaN(dos)) {
+    console.log(uno + dos);
+}
+else {
+    console.log('Erreur de type');
+}
