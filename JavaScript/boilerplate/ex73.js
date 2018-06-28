@@ -15,3 +15,10 @@ let m = (date.getMonth());
 let d = addZero(date.getDate());
 
 console.log(`${d} ${tab_mois[m]} ${y}`);
+
+const dt = new Date();
+console.log(dt.toLocaleDateString('fr-FR', {
+    day: 'numeric',
+    year: 'numeric',
+    month: 'short'
+}));

@@ -7,6 +7,7 @@ function addZero(i) {
 }
 
 let date = new Date();
+console.log(date.toLocaleDateString());
 
 let y = addZero(date.getFullYear());
 let m = addZero(date.getMonth()+1);
