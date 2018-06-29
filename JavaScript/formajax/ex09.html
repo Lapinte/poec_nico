@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Exercice 9</title>
+    <style type="text/css">
+        .un {
+            height: 100px;
+            width: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <div class="un"></div>
+    <button>Change</button>
+
+    <script>
+        
+        let button = document.querySelector('button');
+        button.addEventListener('click', () => {
+            let div = document.querySelector('div');
+            div.classList.toggle('un');
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Exercice 8</title>
+</head>
+<body>
+
+    <form>
+        <input type="text" name="name">
+        <button type="submit">Valider</button>
+    </form>
+
+    <script>
+        let elemForm = document.querySelector('form');
+        elemForm.addEventListener('submit', function VerifChampVide(ev) {
+            let x = elemForm.querySelector('input');
+            if (x.value == "") {
+                x.style.borderColor = "red";
+                ev.preventDefault();
+            }
+        });
+
+    </script>
+
+</body>
+</html>

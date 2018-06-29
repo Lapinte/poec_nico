@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Exercice 10</title>
+</head>
+<body>
+
+    <span class="normal"></span>
+    <span class="append"></span>
+    <button>Add</button>
+
+    <script>
+        
+        let button = document.querySelector('button');
+
+        button.addEventListener('click', () => {
+            let spanNormal = document.querySelector('.normal');
+            let spanAppend = document.querySelector('.append');
+            spanNormal.innerHTML = "Coucou";
+            spanAppend.innerHTML += "Coucou";
+            //append.insertAdjacentHTML('beforeend', 'coucou');
+        });
+
+    </script>
+
+</body>
+</html>

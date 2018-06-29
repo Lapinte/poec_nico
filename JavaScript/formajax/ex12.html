@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Exercice 12</title>
+</head>
+<body>
+    <ul id="LesArticles">
+
+
+    </ul>
+
+    <script src="httpRequest.js"></script>
+    <script>
+
+        let article = { title: 'le titre', body: 'le contenu' };
+        let titre = 'le titre';
+        let contenu = 'le contenu';
+
+        //récupératon de l'objet de communication
+        let httpReq = getHttpRequest();
+        
+
+        httpReq.onreadystatechange = () => {
+            if (httpReq.readyState == 4) {
+                console.log(httpReq.responseText);
+            }
+        };
+
+        //parametrage et ouverture de la communication
+        httpReq.open('POST', 'http://jsonplaceholder.typicode.com/posts', true);
+        httpReq.setRequestHeader('Content-Type', 'application/json');
+        httpReq.send(JSON.stringify(article));
+
+        //httpReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+        ////envoi de la demande
+        //httpReq.send(`title=${titre}&body=${contenu}`);
+    </script>
+
+</body>
+</html>
