@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Exercice 14</title>
+    <style>
+        canvas { border: 1px solid black;}
+
+    </style>
+</head>
+<body>
+
+    <canvas width="300" height="300">
+
+       
+    </canvas>
+
+    <script src="httpRequest.js"></script>
+    <script>
+        let canvas = document.querySelector('canvas');
+        let ctx = canvas.getContext('2d');
+
+        ctx.fillStyle = 'rgb(200, 0, 0)';
+        ctx.fillRect(10, 10, 50, 50);
+
+        ctx.fillStyle = 'rgba(0, 0, 200, 0.5)';
+        ctx.fillRect(30, 30, 50, 50);
+
+        ctx.beginPath();
+        ctx.arc(75, 75, 50, 0, Math.PI * 2, true); // Outer circle
+        ctx.moveTo(110, 75);
+        ctx.arc(75, 75, 35, 0, Math.PI, false);  // Mouth (clockwise)
+        ctx.moveTo(65, 65);
+        ctx.arc(60, 65, 5, 0, Math.PI * 2, true);  // Left eye
+        ctx.moveTo(95, 65);
+        ctx.arc(90, 65, 5, 0, Math.PI * 2, true);  // Right eye
+        ctx.stroke();
+
+        function dessiner() {
+            let canvas = document.querySelector('canvas').getContext('2d');
+            canvas.fillStyle = 'orange';
+            canvas.fillRect(0, 0, 200, 200);
+
+            canvas.fillStyle = '#FFF'
+            canvas.globalAlpha = 0.2;
+            for (let i = 0; i < 8; i++) {
+                canvas.beginPath();
+                canvas.arc(75, 75, 10 + 10 * i, 0, Math.PI * 2, true);
+                canvas.fill();
+            }
+        }
+        dessiner();
+    </script>
+
+</body>
+</html>

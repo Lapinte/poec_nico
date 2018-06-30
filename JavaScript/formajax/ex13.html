@@ -6,11 +6,35 @@
     <title>Exercice 13</title>
 </head>
 <body>
-    
+
+    <span></span>
 
     <script src="httpRequest.js"></script>
     <script>
+        if ("geolocation" in navigator) {
 
+            function success(pos) {
+                var crd = pos.coords;
+
+                console.log('Votre position actuelle est :');
+                console.log(`Latitude : ${crd.latitude}`);
+                console.log(`Longitude: ${crd.longitude}`);
+                console.log(`Plus ou moins ${crd.accuracy} mètres.`);
+            };
+
+            navigator.geolocation.getCurrentPosition(success);
+
+        } else {
+            alert("Le service de géolocalisation n'est pas disponible sur votre ordinateur.");
+        }
+
+        /*navigator.geolocation.getCurrentPosition(
+            (position) => {
+                document.querySelector('span').innerHTML =
+                    position.coords.latitude + ', ' + position.coords.longitude;
+            },
+            () => alert("Géolocalisation impossible.")
+        );*/
     </script>
 
 </body>
