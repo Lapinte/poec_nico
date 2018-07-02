@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>ex03</title>
+</head>
+<body>
+
+    <form>
+        <input type="text" name="name">
+        <button type="submit">Valider</button>
+    </form>
+
+    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("form").submit(function (ev) {
+                let saisi = $("input").val();
+                if (saisi === "") {
+                    $("input").css("border-color", "red");
+                    
+                    ev.preventDefault();
+                }
+                
+            });
+        });        
+    </script>
+
+</body>
+</html>
